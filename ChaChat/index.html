@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Demo</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script type="text/javascript" src="js/lib/Box2dWeb-2.1.a.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/lufylegend-1.10.1.js"></script>
+    <script type="text/javascript" src="js/Demo.js"></script>
+    <script type="text/javascript" src="js/lib/socketio.js"></script>
+    <script type="text/javascript" src="js/Player.js"></script>
+</head>
+<body style="margin:0px 0px 0px 0px;" onclose="onExit()" onbeforeunload="onExit()">
+<div id="legend"></div>
+<script>
+    function onExit() {
+        //  alert('EXIT');
+        if (socket != null)
+            socket.emit('message', {
+                type: "remove",
+                data: player.id
+            });
+    }
+    window.onbeforeunload = onExit();
+</script>
+</body>
+</html>

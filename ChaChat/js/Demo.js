@@ -156,7 +156,7 @@ function btnClick(event) {
 }
 function initSocket() {
 //This is all that needs
-    socket = io('http://192.168.85.62:3000');
+    socket = io('http://127.0.0.1:3000');
     socket.on('greeting-from-server', function (message) {
         //alert(message.greeting);
         message.data.forEach(function (p) {

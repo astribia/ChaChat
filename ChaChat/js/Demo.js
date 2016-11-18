@@ -21,7 +21,6 @@ var imglist = {};
 var btns = new Array();
 var players = new Array();
 function main() {
-    // alert("感谢您使用lufylegend库件");
     addChild(new FPS());
     LGlobal.align = LStageAlign.BOTTOM_MIDDLE;
     LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
